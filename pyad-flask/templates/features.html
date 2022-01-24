@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}GEEK-Fitness GmbH | Feartures der Website{% endblock %}
+
+{% block content %}
+  <h3 class="text-center">Hier werden alle Features der Website und ihre Funktionen kurz erklärt.</h3>
+
+  <hr>
+
+  {% if request.args.get('error') %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{request.args.get('error')}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% elif request.args.get('success') %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{request.args.get('success')}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% endif %}
+
+  <ul class="list-group">
+    <li class="list-group-item">- Man kann einen Benutzer hinzufügen. Dieser bekommt automatisch die richtige Gruppe nach Auswahl der Abteilung und die Remotedesktopbenutze Gruppe zugewiesen. Ebenfalls wird dem Benutzer die richtige OU und einem Home-Laufwerk zugewiesen.</li>
+    <li class="list-group-item">- Man kann einen Benutzer löschen. Dieser wird aus allen Gruppen in der er sich befindet entfernt.</li>
+    <li class="list-group-item">- Sollte ein Benutzer die Abteilung wechseln, kann man dies hier auch realisieren. Dem Benutzer wird die Alte Gruppe, nach Auswahl der richtigen Abteilung aus der er raus wechselt, entfernt, wird in die neue richtige OU verschoben und ihm wird die neue Gruppe, nach Auswahl der richtigen Abteilung, zugewiesen.</li>
+    <li class="list-group-item">- Wenn ein Kunde oder ein Mitarbeiter eine Berechtigung für einen speziellen Ordner braucht oder entfernt bekommen soll, kann das hier eingestellt werden. Dem Benutzer wird die entsprechende Gruppe, nach Auswahl auf der Seite, zugewiesen oder entfernt. Das kann nützlich sein wenn ein Kunde Zugriff auf den Projekte-Ordner benötigt.</li>
+  </ul>
+
+{% endblock %}

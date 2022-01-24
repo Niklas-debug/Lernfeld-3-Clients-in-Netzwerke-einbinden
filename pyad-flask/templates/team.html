@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}GEEK-Fitness GmbH | Feartures der Website{% endblock %}
+
+{% block content %}
+  <h3 class="text-center">Team der SUPER IT-Solutions GmbH</h3>
+
+  <hr>
+
+  {% if request.args.get('error') %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{request.args.get('error')}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% elif request.args.get('success') %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{request.args.get('success')}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  {% endif %}
+
+{% endblock %}

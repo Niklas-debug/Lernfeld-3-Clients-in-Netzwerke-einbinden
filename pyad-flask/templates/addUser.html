@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}GEEK-Fitness GmbH | Benutzer hinzufügen{% endblock %}
+
+{% block content %}
+	<h3>Auf dieser Seite können neue Mitarbeiter in das System eingetragen- und erstellt werden.</h3>
+
+	<hr>
+
+	{% if request.args.get('error') %}
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			{{request.args.get('error')}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	{% elif request.args.get('success') %}
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			{{request.args.get('success')}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	{% endif %}
+	
+
+	<form action="#" method="POST">
+		<div class="form-group">
+			<label for="vorname">Vorname</label>
+			<input type="text" class="form-control" id="vorname" aria-describedby="vornameHelp" name="vorname" placeholder="Max" required>
+			<small id="vornameHelp" class="form-text text-muted">Nur der Vorname. Weitere Zweitnamen werden als Nachname gezählt.</small>
+			<label for="nachname">Nachname</label>
+			<input type="text" class="form-control" id="nachname" aria-describedby="nachnameHelp" name="nachname" placeholder="Mustermann" required>
+			<small id="nachnameHelp" class="form-text text-muted">Hier bitte alle Zweit- und Nachnamen eintragen.</small>
+			<label for="category">Abteilung auswählen...</label>
+			<select class="custom-select" name="category">
+				<optgroup label="Abteilung auswählen...">
+					<option value="Einkauf">Einkauf</option>
+					<option value="Finanzen">Finanzen</option>
+					<option value="Geschaeftsfuehrung">Geschäftsführung</option>
+					<option value="IT">IT</option>
+					<option value="Lager">Lager</option>
+					<option value="Personal">Personal</option>
+					<option value="Verkauf">Verkauf</option>
+					<option value="Verwaltung">Verwaltung</option>
+				</optgroup>
+			</select>
+			<label for="password">Passwort</label>
+			<input type="password" class="form-control" id="password" aria-describedby="passwordHelp" name="passwort" placeholder="Passwort" required>
+			<small id="passwordHelp" class="form-text text-muted">Das Passwort muss aus klein, Großbuchstaben, Zahlen und Sonderzeichen bestehen!</small>
+	    </div>
+		<button type="submit" value="submit" class="btn btn-primary">Submit</button>
+	</form>
+{% endblock %}

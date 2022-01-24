@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}GEEK-Fitness GmbH | Abteilung wechseln{% endblock %}
+
+{% block content %}
+	<h3>Auf dieser Seite können Mitarbeiter im System die Abteilungen wechseln.</h3>
+
+	<hr>
+
+	{% if request.args.get('error') %}
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			{{request.args.get('error')}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	{% elif request.args.get('success') %}
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			{{request.args.get('success')}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	{% endif %}
+	
+
+	<form action="#" method="POST">
+		<div class="form-group">
+			<input type="text" class="form-control" id="employeeName" aria-describedby="employeeNameHelp" name="employeeName" placeholder="Max Mustermann" required>
+			<small id="employeeNameHelp" class="form-text text-muted">Bitte Vor- und Nachnamen eingeben</small>
+		</div>
+		<div class="form-group">
+			<label for="category">Jetzige Abteilung auswählen...</label>
+			<select class="custom-select" name="category1">
+				<optgroup label="Jetzige Abteilung auswählen...">
+					<option value="Einkauf">Einkauf</option>
+					<option value="Finanzen">Finanzen</option>
+					<option value="Geschaeftsfuehrung">Geschäftsführung</option>
+					<option value="IT">IT</option>
+					<option value="Lager">Lager</option>
+					<option value="Personal">Personal</option>
+					<option value="Verkauf">Verkauf</option>
+					<option value="Verwaltung">Verwaltung</option>
+				</optgroup>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="category">Zukünftige Abteilung auswählen...</label>
+			<select class="custom-select" name="category2">
+				<optgroup label="Zukünftige Abteilung auswählen...">
+					<option value="Einkauf">Einkauf</option>
+					<option value="Finanzen">Finanzen</option>
+					<option value="Geschaeftsfuehrung">Geschäftsführung</option>
+					<option value="IT">IT</option>
+					<option value="Lager">Lager</option>
+					<option value="Personal">Personal</option>
+					<option value="Verkauf">Verkauf</option>
+					<option value="Verwaltung">Verwaltung</option>
+				</optgroup>
+			</select>
+		</div>
+		<button type="submit" value="submit" class="btn btn-primary">Submit</button>
+	</form>
+{% endblock %}

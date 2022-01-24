@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}GEEK-Fitness GmbH | Benutzer löschen{% endblock %}
+
+{% block content %}
+	<h3>Auf dieser Seite können Mitarbeiter aus dem System gelöscht werden.</h3>
+
+	<hr>
+
+	{% if request.args.get('error') %}
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			{{request.args.get('error')}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	{% elif request.args.get('success') %}
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			{{request.args.get('success')}}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	{% endif %}
+	
+
+	<form action="#" method="POST">
+		<div class="form-group">
+			<input type="text" class="form-control" id="employeeName" aria-describedby="employeeNameHelp" name="employeeName" placeholder="Max Mustermann" required>
+			<small id="employeeNameHelp" class="form-text text-muted">Bitte Vor- und Nachnamen eingeben</small>
+		</div>
+		<div class="custom-control custom-switch pb-4">
+			<input type="checkbox" class="custom-control-input" id="confirmDeletion" name="confirmDeletion"required>
+			<label class="custom-control-label" for="confirmDeletion">Löschung bestätigen?</label>
+		</div>
+		<button type="submit" value="submit" class="btn btn-primary">Submit</button>
+		<div class="form-group">
+			<h4 class="text-left pt-3">Dieser Schritt kann nicht rückgängig gemacht werden!</h3>
+		</div>
+	</form>
+{% endblock %}
