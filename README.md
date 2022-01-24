@@ -21,4 +21,5 @@ Verzeichnisdienst).
 - If all worked successfully, you can now navigate about the website and try to some functions
 
 Infos or Questions: info@niklasl.com
+
 *No liability is taken on the source code for any damage to the computer or server or failing to submit the source code.*
