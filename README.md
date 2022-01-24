@@ -18,6 +18,9 @@ Verzeichnisdienst).
 - Open Comand Prompt or Powershell in the Directory where `main.py` is located
 - In the shell type: `python .\main.py` (If this don't work, try: `python3 .\main.py`)
 - Try to navigate in your browser to: `127.0.0.1:5000`
+- Login Credentials (they can be found and changed in `main.py` in line: 8-9): 
+  - Username: Administrator
+  - Password: BS14Lf3
 - If all worked successfully, you can now navigate about the website and try to some functions
 
 Infos or Questions: info@niklasl.com
