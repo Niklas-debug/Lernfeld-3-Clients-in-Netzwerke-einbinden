@@ -7,7 +7,7 @@ Verzeichnisdienst).
 
 ## Requirements
 
-- Minimum: Python 3.7.x - Recommended: Python 3.10 (python has to be in PATH-Variables)
+- Minimum: Python 3.7.x - Recommended: Python 3.10 (python has to be installed as PATH-Variable)
 - Browser
 - Texteditor/IDE - E.g. Sublime Text or Pycharm
 - **Pip**: Flask, pyad, pythoncom, flask_basicauth. More information in the first lines of `main.py`
